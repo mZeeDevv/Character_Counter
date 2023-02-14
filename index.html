@@ -1,18 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Time Character Counter</title>
 </head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        background-color: #8EC5FC;
+        background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+        align-items: center;
+    }
+    .body_div{
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .body_div textarea {
+        margin: 10px;
+        border-radius: 9px;
+        padding: 10px;
+        width: 300px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .para {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+</style>
+
 <body>
-    <div class="head"><h3>Welcome to Character Counter</h3></div>
+    <div class="head">
+        <h3>Welcome to Character Counter</h3>
+    </div>
     <div class="body_div">
-        <textarea id="text" placeholder="Type your message here...." rows="30" cols="20" maxlength="50"></textarea>
+        <textarea id="text" placeholder="Type your message here.... Max-50 Characters" rows="10" cols="20" maxlength="50"></textarea>
+        <div class="para" id="para"><span id="value">0 </span>/50</div>
         <button id="btn">Submit it</button>
     </div>
     </div>
-
 </body>
+<script> 
+let btn = document.getElementById('btn');
+let textarea = document.getElementById('text');
+let value = document.getElementById('value');
+let para = document.getElementById('para');
+
+textarea.onkeyup = function(){
+     value.innerHTML = textarea.value.length;
+
+     if(textarea.value.length == 50){
+        para.style.color = "red"
+     }
+}
+</script>
+
 </html>
