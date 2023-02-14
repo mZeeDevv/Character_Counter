@@ -7,43 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Time Character Counter</title>
 </head>
-<style>
-    body {
-        display: flex;
-        flex-direction: column;
-        background-color: #8EC5FC;
-        background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-        align-items: center;
-    }
-    .body_div{
-        height: 70vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .body_div textarea {
-        margin: 10px;
-        border-radius: 9px;
-        padding: 10px;
-        width: 300px;
-        font-family: 'Courier New', Courier, monospace;
-    }
-    .para {
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
-    }
-    button {
-     color: #fff;
-     background-color: #E0C3FC;
-     padding: 10px;
-     border: 7px;
-     border: 4px solid #8EC5FC;
-     font-weight: bolder;
-    }
-</style>
-
+<link rel="stylesheet" href="index.css">
 <body>
     <div class="head">
         <h3>Welcome to Character Counter</h3>
@@ -55,21 +19,8 @@
     </div>
     </div>
 </body>
-<script> 
-let btn = document.getElementById('btn');
-let textarea = document.getElementById('text');
-let value = document.getElementById('value');
-let para = document.getElementById('para');
+<script src="index.js"> 
 
-textarea.onkeyup = function(){
-     value.innerHTML = textarea.value.length;
-
-     if(textarea.value.length == 50){
-        para.style.color = "red"
-     } else {
-        para.style.color = "black"
-     }
-}
 </script>
 
 </html>
